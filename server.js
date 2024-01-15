@@ -3,12 +3,36 @@ const path = require('path');
 const bodyparser = require('body-parser');
 const app = express();
 
+const mongoose = require('mongoose');
+
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+//Database
+mongoose.connect("mongodb://127.0.0.1:27017/BestAnimeCollection");
+
+const AnimeSchema = new mongoose.Schema( {
+    title: String,
+    author: String,
+    chapters: Number,
+    genres: Array,
+    rating: Number
+})
+
+const AnimeModel = mongoose.model("anime", AnimeSchema);
 
 //Routes
 app.get('/',(req, res) => {
     res.sendFile(__dirname + '/survey.html');
+});
+
+app.get('/data', (req, res) => {
+    AnimeModel.find({}).then(function(anime) {
+        res.json(anime)
+    }).catch (function(err) {
+        console.log(err)
+    });
 });
 
 app.post('/results',(req, res) => {
@@ -17,11 +41,10 @@ app.post('/results',(req, res) => {
     res.send("Thank you for choosing " + user_choice + " as anime of the year!");
 });
 
-
+//Listening for server
 app.listen(3000, ()=> {
     console.log("Server is running on port 3000 (http://localhost:3000/).")
 });
-
 
 /*Important links to consider
 https://www.linkedin.com/advice/1/how-can-you-prevent-spam-submissions-html-forms-tfcaf#:~:text=You%20can%20use%20CSS%20or,the%20form%20submission%20as%20spam.
