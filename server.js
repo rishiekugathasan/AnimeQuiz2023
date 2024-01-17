@@ -14,10 +14,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/BestAnimeCollection");
 
 const AnimeSchema = new mongoose.Schema( {
     title: String,
-    author: String,
-    chapters: Number,
+    creator: String,
     genres: Array,
-    rating: Number
+    rating: Number,
+    vote: Number
 })
 
 const AnimeModel = mongoose.model("anime", AnimeSchema);
