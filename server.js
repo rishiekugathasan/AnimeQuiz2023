@@ -3,7 +3,9 @@ const path = require('path');
 const bodyparser = require('body-parser');
 const app = express();
 
+const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
+const { createNullProtoObjWherePossible } = require('ejs/lib/utils');
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,10 +37,29 @@ app.get('/data', (req, res) => {
     });
 });
 
+app.get('/data/:id', (req, res) => {
+
+    if (!(ObjectId.isValid(req.params.id))) {
+        res.status(500).json({error: "Not a valid document id."})
+    }
+
+    AnimeModel.findOne({_id: new ObjectId(req.params.id)}).then(anime =>  {
+        res.status(200).json(anime)
+    }).catch (function(err) {
+        res.status(500).json({error: 'Could not fetch the document'});
+    });
+});
+
 app.post('/results',(req, res) => {
     console.log(req.body);
-    user_choice = req.body.user_choice;
-    res.send("Thank you for choosing " + user_choice + " as anime of the year!");
+    let user_choice = req.body.user_choice;
+
+    AnimeModel.findOneAndUpdate({title: user_choice}, {$inc: {vote: 1}}).then(anime =>  {
+        res.status(200).send("Thank you for choosing " + user_choice + " as anime of the year!");
+    }).catch (function(err) {
+        res.status(500).json({error: 'Could not fetch the document'});
+    });
+    
 });
 
 //Listening for server
