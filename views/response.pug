@@ -1,0 +1,12 @@
+doctype html
+-let animeTitle = user_choice
+-let c = choice
+head
+    link(rel='stylesheet', type='text/css', href='/response.css')
+    title Response to User Choice for Anime Quiz 2024
+#Header
+    if c
+        h1#title.header Thank you for choosing #{animeTitle}
+    else 
+        h1#title.header You either need to choose an anime or are trying to resubmit. Sorry but that isn't permitted in order to reduce spam.
+script(src='response.js')

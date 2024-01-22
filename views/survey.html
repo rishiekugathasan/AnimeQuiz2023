@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Best Anime of 2023</title>
-        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="/survey.css" type="text/css">
+        <script src="survey.js"></script>
     </head>
     <body>
         <h1 class="webtitle">Best Anime of 2023</h1>
         <p class="description">Submit this anime survey form as feedback for what is the best anime of this year. Results will be posted soon in the future.</p>
 
         <div class="form_div">
-            <form class="form" action="http://localhost:3000/results" method="POST">
+            <form class="form" action="http://localhost:3000/results" method="POST" name="animeForm" onsubmit="submitButton.disabled = true; return true;">
                 <fieldset>
                     <label for="option_1"><input id="option_1" name="user_choice" type="radio" value="Vinland Saga Season 2"/>Vinland Saga Season 2</label>
                     <label for="option_2"><input id="option_2" name="user_choice" type="radio" value="Frieren: Beyond Journey’s End"/>Frieren: Beyond Journey’s End</label>
@@ -22,7 +23,7 @@
                     <label for="option_8"><input id="option_8" name="user_choice" type="radio" value="Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc"/>Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc</label>
                     <label for="option_8"><input id="option_8" name="user_choice" type="radio" value="Solo Levelling"/>Solo Levelling</label>
                 </fieldset>
-                <input type="submit" id="submit_btn" value="Submit"/>
+                <input type="submit" id="submit_btn" value="Submit" name="submitButton"/>
             </form>
         </div>
 
