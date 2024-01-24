@@ -8,20 +8,20 @@
     </head>
     <body>
         <h1 class="webtitle">Best Anime of 2023</h1>
-        <p class="description">Submit this anime survey form as feedback for what is the best anime of this year. Results will be posted soon in the future.</p>
+        <p class="description">Submit this anime survey form as feedback for what is the best anime of this year. Results will be posted soon in the future. Note that your choice <b>CANNOT</b> be re-made so please choose carefully. Measures have been taken to prevent spamming and bots.</p>
 
         <div class="form_div">
             <form class="form" action="http://localhost:3000/results" method="POST" name="animeForm" onsubmit="submitButton.disabled = true; return true;">
                 <fieldset>
-                    <label for="option_1"><input id="option_1" name="user_choice" type="radio" value="Vinland Saga Season 2"/>Vinland Saga Season 2</label>
-                    <label for="option_2"><input id="option_2" name="user_choice" type="radio" value="Frieren: Beyond Journey’s End"/>Frieren: Beyond Journey’s End</label>
-                    <label for="option_3"><input id="option_3" name="user_choice" type="radio" value="Oshi No Ko"/>Oshi No Ko</label>
-                    <label for="option_4"><input id="option_4" name="user_choice" type="radio" value="JUJUTSU KAISEN Season 2"/>JUJUTSU KAISEN Season 2</label>
-                    <label for="option_5"><input id="option_5" name="user_choice" type="radio" value="Kaguya-sama: Love is War -Ultra Romantic-"/>Kaguya-sama: Love is War -Ultra Romantic-</label>
-                    <label for="option_6"><input id="option_6" name="user_choice" type="radio" value="BLEACH: Thousand-Year Blood War - The Separation"/>BLEACH: Thousand-Year Blood War - The Separation</label>
-                    <label for="option_7"><input id="option_7" name="user_choice" type="radio" value="Mushoku Tensei: Jobless Reincarnation Season 2"/>Mushoku Tensei: Jobless Reincarnation Season 2</label>
-                    <label for="option_8"><input id="option_8" name="user_choice" type="radio" value="Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc"/>Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc</label>
-                    <label for="option_8"><input id="option_8" name="user_choice" type="radio" value="Solo Levelling"/>Solo Levelling</label>
+                    <label for="option_1"><input class="options" id="option_1" name="user_choice" type="radio" value="Vinland Saga Season 2"/><span>Vinland Saga Season 2</span></label>
+                    <label for="option_2"><input class="options" id="option_2" name="user_choice" type="radio" value="Frieren: Beyond Journey’s End"/><span>Frieren: Beyond Journey’s End</span></label>
+                    <label for="option_3"><input class="options" id="option_3" name="user_choice" type="radio" value="Oshi No Ko"/><span>Oshi No Ko</span></label>
+                    <label for="option_4"><input class="options" id="option_4" name="user_choice" type="radio" value="JUJUTSU KAISEN Season 2"/><span>JUJUTSU KAISEN Season 2</span></label>
+                    <label for="option_5"><input class="options" id="option_5" name="user_choice" type="radio" value="Kaguya-sama: Love is War -Ultra Romantic-"/><span>Kaguya-sama: Love is War -Ultra Romantic-</span></label>
+                    <label for="option_6"><input class="options" id="option_6" name="user_choice" type="radio" value="BLEACH: Thousand-Year Blood War - The Separation"/><span>BLEACH: Thousand-Year Blood War - The Separation</span></label>
+                    <label for="option_7"><input class="options" id="option_7" name="user_choice" type="radio" value="Mushoku Tensei: Jobless Reincarnation Season 2"/><span>Mushoku Tensei: Jobless Reincarnation Season 2</span></label>
+                    <label for="option_8"><input class="options" id="option_8" name="user_choice" type="radio" value="Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc"/><span>Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc</span></label>
+                    <label for="option_9"><input class="options" id="option_9" name="user_choice" type="radio" value="Solo Levelling"/><span>Solo Levelling</span></label>
                 </fieldset>
                 <input type="submit" id="submit_btn" value="Submit" name="submitButton"/>
             </form>
