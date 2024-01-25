@@ -1,5 +1,8 @@
 :root {
-    --primary_button_colour: #AFEEEE;
+    --primary_button_colour: rgb(136, 127, 148);
+    --background_button_colour: rgb(170, 155, 190);
+    --border-colour: #9c9595;
+    --top_of_page: rgb(225, 218, 236);
 }
 
 * {
@@ -7,15 +10,17 @@
 }
 
 body {
-    background-color: grey;
+    background-color: rgb(185, 179, 194);
     text-align: center;
-    font-family:Georgia, 'Times New Roman', Times, serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: 1.055em;
+    color: whitesmoke;
 }
 
 .form_div {
     height: 100%;
     width: 100%;
-    border: 2px solid red;
+    border: 2px solid var(--border-colour);
 }
 
 fieldset {
@@ -33,17 +38,16 @@ label {
     position: relative;
     overflow: hidden;
     width: 75%;
+
+    border: 2px solid var(--top_of_page);
+    border-radius: 25px 25px;
 }
 
 label:hover {
+    background-color: var(--background_button_colour);
     
-    color: red;
-    background-color: blue;
     
-    border: 2px solid purple;
-    border-radius: 25px 25px;
-    color: red;
-    background-color: blue;
+    background-color: var(--background_button_colour);
     
 }
 
@@ -85,4 +89,16 @@ span {
     margin-left: 50%;
     margin-right: 50%;
     margin-bottom: 2%;
+
+    
+}
+
+.rounded {
+    border-top: 3px solid var(--border-colour);
+    
+}
+
+h1 {
+    border: 2px solid var(--top_of_page);
+    background-image: linear-gradient(45deg, rgb(136, 127, 148) ,var(--top_of_page));
 }
