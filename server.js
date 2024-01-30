@@ -91,7 +91,12 @@ app.post('/results',(req, res) => {
 
     AnimeModel.findOneAndUpdate({title: user_choice}, {$inc: {vote: 1}}).then(anime =>  {
         //res.status(200).send("Thank you for choosing " + user_choice + " as anime of the year!");
-        res.status(200).render(__dirname + "/views/response.pug", {user_choice, choice})
+        if (Object.keys(req.body).length == 0) {
+            let choice = false;
+            res.render(__dirname + "/views/response.pug", {choice});
+        }else {
+            res.status(200).render(__dirname + "/views/response.pug", {user_choice, choice});
+        }
     }).catch (function(err) {
         res.status(500).json({error: 'Could not fetch the document'});
     });

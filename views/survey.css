@@ -20,12 +20,12 @@ body {
 .form_div {
     height: 100%;
     width: 100%;
-    border: 2px solid var(--border-colour);
 }
 
 fieldset {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border: 0;
 }
 
 label {
@@ -33,6 +33,8 @@ label {
     display: block;
     margin: 0.5rem 0;
     text-align: left;
+
+    margin-left: 10%;
 
     cursor: pointer;
     position: relative;
@@ -85,17 +87,16 @@ span {
 }
 
 #submit_btn {
-    margin-top: 5%;
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-top: 2%;
     margin-bottom: 2%;
 
-    
-}
-
-.rounded {
-    border-top: 3px solid var(--border-colour);
-    
+    color: whitesmoke;
+    background-image: linear-gradient(45deg, rgb(136, 127, 148), rgb(112, 85, 146) );
+    border: 2px solid whitesmoke;
+    /*buttons are inline block*/
+    display: inline-block;
+    height: 50px;
+    width: 150px;
 }
 
 h1 {
